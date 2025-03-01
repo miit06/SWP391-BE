@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @Setter
 @Table(name = "ReservationService")
 public class ServiceReservation {
+    @Id
     @Column(name = "ReservationID")
     private String ReservationID;
 
