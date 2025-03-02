@@ -1,6 +1,7 @@
-package com.example.demo.homepage;
+package com.example.demo.Servicelist;
 
 import jakarta.persistence.*;
+import jdk.jfr.Category;
 import lombok.*;
 
 @Entity
@@ -9,19 +10,21 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Service {
+public class Servicelist {
+
     @Id
     private String id;
-
-    @Column (name = "Name")
-    private String name;
 
     @Column (name = "Detail")
     private String detail;
 
-    @Column (name = "Quantity")
-    private int quantity;
+    @Column (name = "Name")
+    private String name;
 
     @Column (name = "Price")
     private String price;
+
+    @Column (name = "Quantity")
+    private int quantity;
+
 }
