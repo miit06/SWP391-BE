@@ -14,15 +14,15 @@ public class Service {
 
     private String id;
 
-    @Column (name = "Name")
-    private String name;
+    @Column (name = "ServiceName")
+    private String serviceName;
 
-    @Column (name = "Detail")
-    private String detail;
+    @Column (name = "ServiceDetail")
+    private String serviceDetail;
 
-    @Column (name = "Quantity")
-    private int quantity;
+    @Column (name = "ServiceQuantity")
+    private int serviceQuantity;
 
-    @Column (name = "Price")
-    private String price;
+    @Column (name = "ServicePrice")
+    private int servicePrice;
 }

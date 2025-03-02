@@ -12,6 +12,7 @@ import lombok.*;
 @Table(name = "Slider")
 public class Slider {
     @Id
+    @Column(name = "SliderId")
     private String id;
 
     @Column(name = "Image")
