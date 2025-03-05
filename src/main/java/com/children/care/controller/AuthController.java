@@ -1,5 +1,8 @@
-package com.example.demo.Authentication;
+package com.children.care.controller;
 
+import com.children.care.entity.Account;
+import com.children.care.service.AccountService;
+import com.children.care.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -45,7 +48,7 @@ public class AuthController {
 
             // Retrieve the authenticated user and generate JWT
             Account authenticatedUser = accountService.findByUsername(account.getUsername()).orElseThrow(() -> new AuthenticationException("Invalid credentials") {});
-            String jwt = jwtUtil.generateToken(authenticatedUser.username);
+            String jwt = jwtUtil.generateToken(authenticatedUser.getUsername());
 
             return ResponseEntity.ok(jwt);
         } catch (AuthenticationException e) {

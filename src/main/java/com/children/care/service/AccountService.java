@@ -1,9 +1,11 @@
-package com.example.demo.Authentication;
+package com.children.care.service;
 
 
 import java.util.List;
 import java.util.Optional;
 
+import com.children.care.entity.Account;
+import com.children.care.repository.AccountRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

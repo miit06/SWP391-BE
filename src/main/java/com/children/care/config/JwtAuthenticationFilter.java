@@ -1,7 +1,6 @@
-package com.example.demo.Authentication.config;
+package com.children.care.config;
 
-import com.example.demo.Authentication.AccountService;
-import com.example.demo.Authentication.JwtUtil;
+import com.children.care.service.AccountService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
