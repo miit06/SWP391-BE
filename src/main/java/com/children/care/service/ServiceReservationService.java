@@ -23,6 +23,10 @@ public class ServiceReservationService {
         return serviceReservationRepository.save(serviceReservation);
     }
 
+    public List<ServiceReservation> findReservationByReservationID(String ReservationID){
+        return serviceReservationRepository.findByReservationId(ReservationID);
+    }
+
     public ServiceReservation updateServiceReservation(String ServiceID, String ReservationID, ServiceReservation serviceReservation) {
         ServiceReservation updatedServiceReservation = serviceReservationRepository.findByServiceIdAndReservationId(ServiceID, ReservationID);
         if (updatedServiceReservation != null) {
