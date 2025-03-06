@@ -1,6 +1,7 @@
 package com.children.care.repository;
 
-import com.example.demo.Reservation.ServiceReservation;
+
+import com.children.care.entity.ServiceReservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

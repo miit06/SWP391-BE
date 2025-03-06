@@ -1,7 +1,8 @@
 package com.children.care.controller;
 
+import com.children.care.entity.ServiceReservation;
 import com.children.care.service.ServiceReservationService;
-import com.example.demo.Reservation.ServiceReservation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

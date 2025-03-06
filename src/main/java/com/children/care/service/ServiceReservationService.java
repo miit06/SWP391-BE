@@ -1,7 +1,8 @@
 package com.children.care.service;
 
+import com.children.care.entity.ServiceReservation;
 import com.children.care.repository.ServiceReservationRepository;
-import com.example.demo.Reservation.ServiceReservation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
