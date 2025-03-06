@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.children.care.entity.Category;
 import com.example.demo.Authentication.Account;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 @Entity

@@ -3,6 +3,7 @@ package com.example.demo.entity;
 
 
 import com.children.care.entity.Reservation;
+import com.children.care.entity.Service;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

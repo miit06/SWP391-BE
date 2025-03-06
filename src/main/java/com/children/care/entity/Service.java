@@ -1,10 +1,10 @@
-package com.example.demo.entity;
+package com.children.care.entity;
 
+import com.example.demo.entity.ReservationService;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter

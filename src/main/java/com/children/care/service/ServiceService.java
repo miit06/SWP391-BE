@@ -1,13 +1,15 @@
-package com.example.demo.Servicedetail;
+package com.children.care.service;
 
+import com.children.care.entity.Servicedetail;
+import com.children.care.repository.ServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class ServicedetailService {
+public class ServiceService {
     @Autowired
-    public ServicedetailRepo serviceRepository;
+    public ServiceRepository serviceRepository;
 
     public List<Servicedetail> getAllServices() {
         return List.of();

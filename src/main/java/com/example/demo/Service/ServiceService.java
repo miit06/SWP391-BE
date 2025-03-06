@@ -2,8 +2,8 @@ package com.example.demo.Service;
 
 import com.example.demo.DTO.CreateServiceDTO;
 import com.example.demo.DTO.ServiceDTO;
-import com.example.demo.entity.Category;
-import com.example.demo.entity.Service;
+import com.children.care.entity.Category;
+import com.children.care.entity.Service;
 import com.example.demo.Mapper.ServiceMapper;
 import com.example.demo.Repository.CategoryRepository;
 import com.example.demo.Repository.ServiceRepository;

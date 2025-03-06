@@ -1,8 +1,6 @@
 package com.example.demo.Mapper;
 
-import com.example.demo.DTO.CategoryDTO;
 import com.example.demo.DTO.PostDTO;
-import com.example.demo.entity.Category;
 import com.example.demo.entity.Post;
 import org.springframework.stereotype.Component;
 

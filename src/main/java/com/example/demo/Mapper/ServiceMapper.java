@@ -1,7 +1,7 @@
 package com.example.demo.Mapper;
 
 import com.example.demo.DTO.ServiceDTO;
-import com.example.demo.entity.Service;
+import com.children.care.entity.Service;
 import org.springframework.stereotype.Component;
 
 @Component

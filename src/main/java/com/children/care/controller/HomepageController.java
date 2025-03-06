@@ -1,7 +1,11 @@
-package com.example.demo.homepage;
+package com.children.care.controller;
 
 import com.example.demo.entity.Post;
-import com.example.demo.entity.Service;
+import com.children.care.entity.Service;
+import com.example.demo.homepage.PostRepo;
+import com.example.demo.homepage.ServiceRepo;
+import com.example.demo.homepage.Slider;
+import com.example.demo.homepage.SliderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

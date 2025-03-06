@@ -2,7 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.DTO.CategoryDTO;
 import com.example.demo.Repository.CategoryRepository;
-import com.example.demo.entity.Category;
+import com.children.care.entity.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

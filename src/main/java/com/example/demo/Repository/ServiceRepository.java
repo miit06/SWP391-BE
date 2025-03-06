@@ -1,6 +1,6 @@
 package com.example.demo.Repository;
 
-import com.example.demo.entity.Service;
+import com.children.care.entity.Service;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
