@@ -8,6 +8,8 @@ import com.children.care.repository.AccountRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserProfileService {
     @Autowired
@@ -24,7 +26,6 @@ public class UserProfileService {
         account.setEmail(request.getEmail());
         account.setPhoneNumber(request.getPhoneNumber());
         account.setAddress(request.getAddress());
-
         return accountRepo.save(account);
     }
     public Account register(AuthRequest request){
@@ -37,6 +38,10 @@ public class UserProfileService {
         account.setUserpass(request.getUserpass());
 
         return accountRepo.save(account);
+    }
+
+    public List<Account> getAllAccount(){
+        return accountRepo.findAll();
     }
 
 }
