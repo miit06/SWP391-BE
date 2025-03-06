@@ -6,7 +6,7 @@
     datasource:
       url: "jdbc:mysql://localhost:3306/ChildCare"
       username: root
-      password:
+      password: root
     jpa:
       hibernate:
         ddl-auto: update

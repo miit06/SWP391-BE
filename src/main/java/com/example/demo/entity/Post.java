@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
-import com.example.demo.Authentication.Account;
+
+import com.children.care.entity.Account;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
