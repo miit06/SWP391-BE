@@ -1,8 +1,13 @@
-package com.example.demo.Servicelist;
+package com.example.demo.Servicedetail;
 
 import jakarta.persistence.*;
+import lombok.*;
+
 @Entity
-public class Servicelist {
+@Table(name = "Servicedetail")
+@Data
+public class Servicedetail {
+
     @Id
     private String id;
 
@@ -16,5 +21,6 @@ public class Servicelist {
     private int quantity;
 
     @Column (name = "Price")
-    private String Price;
+    private String price;
+
 }

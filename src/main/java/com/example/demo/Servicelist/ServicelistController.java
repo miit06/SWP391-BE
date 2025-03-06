@@ -1,25 +1,24 @@
 package com.example.demo.Servicelist;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping("/servicelist")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ServicelistController {
-
     @Autowired
-    private ServicelistRepo serviceRepository;
+    private ServicelistService serviceService;
+    private ServicelistRepo servicelistRepo;
 
-    @GetMapping("/contacts")
-    public Map<String, String> getContacts() {
-        Map<String, String> contacts = new HashMap<>();
-        contacts.put("email", "contact@example.com");
-        contacts.put("phone", "+123456789");
-        contacts.put("address", "123 Main Street, City");
-        return contacts;
+    public List<Servicelist> getServicelist() {
+        return servicelistRepo.findAll();
     }
 }
+
