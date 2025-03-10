@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/feedbacks")
-class FeedbackController {
+public class FeedbackController {
     @Autowired
     private FeedbackService feedbackService;
 

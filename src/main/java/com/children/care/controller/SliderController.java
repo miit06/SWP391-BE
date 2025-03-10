@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/sliders")
-class SliderController {
+public class SliderController {
     @Autowired
     private SliderService sliderService;
 
