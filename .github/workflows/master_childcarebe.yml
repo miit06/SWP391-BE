@@ -31,7 +31,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/target/*.jar'
+
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,5 +63,6 @@ jobs:
         with:
           app-name: 'childcarebe'
           slot-name: 'Production'
-          package: '*.war'
+          package: '*.jar'
+
           
