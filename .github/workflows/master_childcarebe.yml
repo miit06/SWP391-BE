@@ -63,7 +63,8 @@ jobs:
         with:
           app-name: 'childcarebe'
           slot-name: 'Production'
-          package: '*.jar'
+          package: 'java-app/*.jar'
+
 
 
           
