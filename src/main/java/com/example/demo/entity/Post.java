@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import com.children.care.entity.Category;
-import com.example.demo.Authentication.Account;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +26,7 @@ public class Post {
     @Column(name = "Title", length = 255)
     private String title;
 
-    @Column(name = "BriefInformation", length = 255)
+    @Column(name = "BriefInformation", columnDefinition = "VARCHAR(255)")
     private String briefInformation;
 
     @Column(name = "Description", length = 255)
