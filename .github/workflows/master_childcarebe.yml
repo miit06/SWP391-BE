@@ -34,7 +34,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          # Vì build tạo file JAR (ví dụ: demo-0.0.1-SNAPSHOT.jar) chứ không phải WAR
           path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
@@ -57,6 +56,9 @@ jobs:
       - name: List downloaded files
         run: ls -R .
 
+      - name: Zip the artifact
+        run: zip -r deploy.zip demo-0.0.1-SNAPSHOT.jar
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -70,5 +72,4 @@ jobs:
         with:
           app-name: 'childcarebe'
           slot-name: 'Production'
-          # Sử dụng pattern đệ quy để đảm bảo tìm thấy file JAR, dù nằm ở đâu trong workspace
-          package: '**/*.jar'
+          package: 'deploy.zip'
