@@ -16,15 +16,19 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Java version
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'microsoft'
+
       - name: Build with Maven
         run: mvn clean install
+
       - name: List target directory
         run: ls -la "${{ github.workspace }}/target"
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -46,16 +50,23 @@ jobs:
         with:
           name: java-app
           path: .
+
       - name: List downloaded files
         run: ls -R .
+
+      - name: Rename WAR file to ROOT.war
+        run: mv demo-0.0.1-SNAPSHOT.war ROOT.war
+
       - name: Zip the artifact
-        run: zip -r deploy.zip demo-0.0.1-SNAPSHOT.war
+        run: zip -r deploy.zip ROOT.war
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_73441706B4794D5EA926BA463504DB1D }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F76BA119F7854EE39F4426AFCD2DF241 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7C4940A69D8541239545F89C208D6686 }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
