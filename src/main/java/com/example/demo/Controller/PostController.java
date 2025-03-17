@@ -13,21 +13,30 @@ import java.util.List;
 @RestController
 @RequestMapping("/posts")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class PostController {
     private final PostService postService;
 
     @GetMapping
     public Page<PostDTO> getPosts(@RequestParam(defaultValue = "0") int page,
                                   @RequestParam(defaultValue = "10") int size) {
-        System.out.println("➡️ API /posts được gọi với page=" + page + " size=" + size);
 
         Page<PostDTO> posts = postService.getPaginatedPosts(PageRequest.of(page, size));
 
-        System.out.println("➡️ API /posts trả về " + posts.getTotalElements() + " bài viết.");
         return posts;
     }
 
+    @GetMapping("/hot")
+    public ResponseEntity<List<PostDTO>> getHotPosts() {
+        List<PostDTO> hotPosts = postService.getHotPosts();
+        return ResponseEntity.ok(hotPosts);
+    }
 
+    @GetMapping("/latest")
+    public ResponseEntity<List<PostDTO>> getLatestPosts() {
+        List<PostDTO> latestPosts = postService.getLatestPosts();
+        return ResponseEntity.ok(latestPosts);
+    }
 
     @GetMapping("/search")
     public Page<PostDTO> searchPosts(@RequestParam String title,
@@ -45,5 +54,11 @@ public class PostController {
     public ResponseEntity<PostDTO> getPostById(@PathVariable String id) {
         PostDTO post = postService.getPostById(id);
         return post != null ? ResponseEntity.ok(post) : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO) {
+        PostDTO createdPost = postService.createPost(postDTO);
+        return ResponseEntity.ok(createdPost);
     }
 }

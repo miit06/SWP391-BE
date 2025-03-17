@@ -1,9 +1,7 @@
 package com.example.demo.entity;
 
 
-
-import com.children.care.entity.Reservation;
-import com.children.care.entity.Service;
+import com.example.demo.Reservation.Reservation;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +26,7 @@ public class ReservationService {
     @ManyToOne
     @MapsId("serviceId")
     @JoinColumn(name = "ServiceID")
-    private Service service;
+    private ServiceEntity service;
 
     @Column(name = "Quantity")
     private Integer quantity;
