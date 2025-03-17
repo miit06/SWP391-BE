@@ -28,30 +28,23 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // Cấu hình CORS sử dụng bean CorsConfigurationSource đã đăng ký
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()));
-
+    
         // Vô hiệu hóa CSRF
         http.csrf(csrf -> csrf.disable());
-
-        // Cấu hình authorization
-        http.authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                        "/api/auth/login",
-                        "/api/auth/register",
-                        "/api/auth/reset-password",
-                        "/api/auth/verify",
-                        "/swagger-ui/**",
-                        "/v3/api-docs/**"
-                ).permitAll()
-                .anyRequest().authenticated());
-
-        // Cấu hình session management là stateless
+    
+        // Cho phép mọi request không cần xác thực
+         http.authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+    
+        // (Nếu không cần session, giữ nguyên)
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
-        // Thêm JWT filter trước UsernamePasswordAuthenticationFilter
-        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+    
+        // Nếu không sử dụng JWT filter nữa thì có thể loại bỏ dòng này, 
+        // hoặc nếu bạn vẫn cần JWT filter, hãy đảm bảo rằng nó không can thiệp vào các request mở.
+        // http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
-    }
+}
+
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
