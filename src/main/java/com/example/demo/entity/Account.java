@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "Account")
+@Table(name = "account")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,31 +14,31 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Username", unique = true, nullable = false)
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
 
     @Column(name = "user_pass", nullable = false)
-    private String userpass; // Mật khẩu sẽ được mã hóa
+    private String userpass; // Mật khẩu đã mã hóa
 
-    @Column(name = "Role", nullable = false)
+    @Column(name = "role", nullable = false)
     private String role;
 
-    @Column(name = "FirstName", nullable = false)
-    private String firstname;
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
 
-    @Column(name = "LastName", nullable = false)
-    private String lastname;
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
-    @Column(name = "Age")
+    @Column(name = "age")
     private int age;
 
-    @Column(name = "Email", unique = true, nullable = false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "PhoneNum", unique = true, nullable = false)
+    @Column(name = "phone_num", unique = true, nullable = false)
     private String phoneNumber;
 
-    @Column(name = "Address")
+    @Column(name = "address")
     private String address;
 
     @Column(name = "status", nullable = false)
@@ -47,10 +47,18 @@ public class Account {
     @Column(name = "jwt_token", columnDefinition = "TEXT")
     private String jwtToken;
 
-
     @Column(name = "reset_token")
     private String resetToken; // Token đặt lại mật khẩu
 
     @Column(name = "email_verified", nullable = false)
     private boolean emailVerified = false; // Kiểm tra xác thực email
+
+    // Constructor tùy chỉnh nếu cần
+    public Account(String username, String userpass, String email) {
+        this.username = username;
+        this.userpass = userpass;
+        this.email = email;
+        this.status = "ACTIVE";
+        this.emailVerified = false;
+    }
 }
