@@ -38,8 +38,8 @@ public class CustomerService {
         account.setUsername(authDTO.getUsername());
         account.setUserpass(authDTO.getUserpass());
         account.setRole("USER");
-        account.setFirstname(authDTO.getFirstname());
-        account.setLastname(authDTO.getLastname());
+        account.setFirstName(authDTO.getFirstname());
+        account.setLastName(authDTO.getLastname());
         account.setAge(authDTO.getAge());
         account.setEmail(authDTO.getEmail());
         account.setPhoneNumber(authDTO.getPhoneNumber());
@@ -56,8 +56,8 @@ public class CustomerService {
         managerRepository.deleteByAccountId(account.getId());
 
         // 2️⃣ Cập nhật thông tin tài khoản
-        account.setFirstname(authDTO.getFirstname());
-        account.setLastname(authDTO.getLastname());
+        account.setFirstName(authDTO.getFirstname());
+        account.setLastName(authDTO.getLastname());
         account.setAge(authDTO.getAge());
         account.setEmail(authDTO.getEmail());
         account.setPhoneNumber(authDTO.getPhoneNumber());

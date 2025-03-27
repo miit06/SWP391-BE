@@ -32,8 +32,8 @@ public class AuthService {
         Account account = new Account();
         account.setUsername(registerDTO.getUsername());
         account.setUserpass(passwordEncoder.encode(registerDTO.getUserpass()));
-        account.setFirstname(registerDTO.getFirstname());
-        account.setLastname(registerDTO.getLastname());
+        account.setFirstName(registerDTO.getFirstname());
+        account.setLastName(registerDTO.getLastname());
         account.setAge(registerDTO.getAge());
         account.setEmail(registerDTO.getEmail());
         account.setPhoneNumber(registerDTO.getPhoneNumber());
@@ -56,7 +56,7 @@ public class AuthService {
 
         // 3️⃣ Gửi email xác thực
         String subject = "Xác thực tài khoản ChildCare";
-        String content = "Chào " + account.getFirstname() + ",<br><br>"
+        String content = "Chào " + account.getFirstName() + ",<br><br>"
                 + "Cảm ơn bạn đã đăng ký tài khoản. Vui lòng nhấn vào link dưới đây để xác thực tài khoản:<br>"
                 + "<a href='http://localhost:8080/api/auth/verify?email=" + account.getEmail() + "'>Xác thực ngay</a>"
                 + "<br><br>Trân trọng, <br>ChildCare Team";
